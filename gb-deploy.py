@@ -27,7 +27,7 @@ def update_deploy_dir(dir):
     try:
         logging.info('gb-deploy: start update {0} folder ...'.format(dir))
         for item in os.listdir('_book'):
-            if item != '.gitignore' and item != 'gb-deploy.py':
+            if item != '.gitignore' and item != 'gb-deploy.py' and item !='gb-config.yml':
                 src = '_book' + os.sep + item
                 deploy_dir = dir + os.sep + item
                 if os.path.isfile(src):
