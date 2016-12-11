@@ -1,0 +1,14 @@
+# deploy directory, default is '.deploy'
+deploy_dir: .deploy
+
+# your user name or orgainzation name
+id: egrethub
+
+# your project name
+project: essentials
+
+# branch, default branch is 'gh-pages'
+branch: gh-pages
+
+# where do you put your image files
+img_root: _asset/image
