@@ -61,8 +61,8 @@ def push_to_gh_pages(dir):
             # subprocess.call(['git', 'push', 'origin', branch])
             subprocess.call(['git', 'push'])
             logging.info('gb-deploy: push to git pages finished.')
-        except:
-            logging.info('gb-deploy: ERROR push failed.'), sys.exc_info()[0]
+        except Exception, e:
+            logging.error(str(e))
         
         # switch to old folder
         os.chdir(original_dir)
@@ -104,6 +104,13 @@ try:
         # do it 
         deploy_dir = config['deploy_dir']
         img_root = config['img_root']
+
+        # file preview
+        # Q:    Can I run HTML files directly from GitHub, instead of just viewing their source?
+        #       http://stackoverflow.com/questions/6551446/can-i-run-html-files-directly-from-github-instead-of-just-viewing-their-source
+
+        # http://rawgit.com/
+
         new_img_root ='https://raw.githubusercontent.com/{0}/{1}/{2}/{3}'.format(config['id'], config['project'], config['branch'], img_root)
 
         clean_deploy_dir(deploy_dir)
