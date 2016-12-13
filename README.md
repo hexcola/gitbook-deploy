@@ -23,19 +23,26 @@ $ git clone https://github.com/<your_name>/<your_project>.git
 
 # switch to project directory
 $ cd <your_project>
+
+# use current directory as gitbook root
+$ gitbook init
 ```
 
-### Create a new gitbook
+### Add .gitignore file
 
-```bash
-# use current directory as gitbook root
-# Since we create a repository as the root of gitbook, we will use this option.
-$ gitbook init
+```bash 
+_book
 
-# or, create a new directory as gitbook root
-$ gitbook init ./<new gitbook>
-$ cd <new gitbook>
+# we'll discuss it later.
+.deploy 
+```
 
+### Commit the project 
+
+```bash 
+$ git add .
+$ git commit -m "initial upload"
+$ git push
 ```
 
 ### Initialize gh-pages branch
@@ -85,3 +92,12 @@ $ gitbook build
 # deploy it files to your branch
 $ gb-deploy.py
 ```
+
+
+## TO-DO
+
+make a gitbook helper
+
+* `gb-helper init https://github.com/<your_name>/<your_project>.git`
+* `gb-helper build`
+* `gh-helper deploy`
