@@ -41,7 +41,7 @@ $ cd <new gitbook>
 ### Initialize gh-pages branch
 
 ```bash
-$ git checkout gh-pages
+$ git checkout -b gh-pages
 $ git push -u origin gh-pages
 $ git checkout master
 ```
